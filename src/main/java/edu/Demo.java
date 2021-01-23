@@ -2,6 +2,9 @@ package edu;
 
 public class Demo {
     public static void main(String[] args) {
-        System.out.println("Hello!");
+        PullRequestFlow pullRequestFlow = new PullRequestFlow();
+
+        pullRequestFlow.setOpenPullRequest().handleOpen();
+
     }
 }

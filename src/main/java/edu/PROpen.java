@@ -2,7 +2,7 @@ package edu;
 
 public class PROpen implements State {
 
-    private final PullRequestFlow flow;
+    private PullRequestFlow flow;
 
     public PROpen(PullRequestFlow flow) {
         this.flow = flow;
@@ -21,7 +21,7 @@ public class PROpen implements State {
 
     @Override
     public void handleAbandon() {
-        flow.setState(flow.setPullRequestAbandoned());
+        flow.setState(flow.getState());
         System.out.println("Pull request is ABANDONED");
     }
 

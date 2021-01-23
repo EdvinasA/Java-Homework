@@ -10,7 +10,7 @@ public class ReadyToComplete implements State{
 
     @Override
     public void handleOpen() {
-        System.out.println("Ready to complete state can only be changed to DRAFT or ABANDONED.");
+        System.out.println("Ready to complete state can only be changed to DRAFT or ABANDONED or COMPLETED.");
     }
 
     @Override
@@ -32,11 +32,12 @@ public class ReadyToComplete implements State{
 
     @Override
     public void handlePassedPolicy() {
-        System.out.println("Ready to complete state can only be changed to DRAFT or ABANDONED.");
+        System.out.println("Ready to complete state can only be changed to DRAFT or ABANDONED or COMPLETED.");
     }
 
     @Override
     public void handleCompletedPullRequest() {
-        System.out.println("Ready to complete state can only be changed to DRAFT or ABANDONED.");
+        flow.setState(flow.setCompletedState());
+        System.out.println("Pull request is COMPLETED.");
     }
 }
